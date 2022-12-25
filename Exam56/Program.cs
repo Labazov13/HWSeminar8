@@ -1,4 +1,5 @@
-﻿/*Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.
+﻿/*Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с 
+наименьшей суммой элементов.
 Например, задан массив:
 1 4 7 2
 5 9 2 3
@@ -14,25 +15,23 @@ void MinSumRows(int[,] array)
         for (int j = 0; j < array.GetLength(1); j++)
         {
             sumRows[i] += array[i, j];
-            
+
         }
-        System.Console.Write(sumRows[i]+" ");
-    }   //45,11,23,7
+        System.Console.Write(sumRows[i] + " ");
+    }
     int minRows = sumRows[0];
-    int index=0;
-    int indexOfMinRows=0;
+    int index = 0;
+    int indexOfMinRows = 0;
     for (int k = 0; k < sumRows.Length; k++)
     {
         if (minRows > sumRows[k])
         {
             minRows = sumRows[k];
-            index=k;
-            
+            index = k;
         }
     }
-    indexOfMinRows=index+1;
-    System.Console.WriteLine("Минимальная строка: " + indexOfMinRows+"-я");
-
+    indexOfMinRows = index + 1;
+    System.Console.WriteLine("Минимальная строка: " + indexOfMinRows + "-я");
 }
 
 int[,] GetArray()
@@ -69,8 +68,3 @@ PrintArray(array);
 System.Console.WriteLine();
 MinSumRows(array);
 System.Console.WriteLine();
-
-//18
-//23
-//18
-//13
