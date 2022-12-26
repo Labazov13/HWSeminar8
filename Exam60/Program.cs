@@ -27,11 +27,12 @@ int[,,] FillArray()
             for (int t = 0; t < array.GetLength(2); t++)
             {
                 array[i, j, t] = new Random().Next(min, max + 1);
+                int randomNumber=array[i,j,t]-new Random().Next(min,max+1);
                 if (t >= 1)
                 {
                     while (array[i, j, t] == array[i, j, t - 1])
                     {
-                        array[i, j, t] = new Random().Next(min, max + 1);
+                        array[i, j, t] = randomNumber;
                     }
                 }
             }
